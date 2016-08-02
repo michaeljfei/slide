@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+.slide {
+  position: relative;
+  width: 100%;
+  min-width: 991px;
+  height: 500px;
+  background: -webkit-linear-gradient(top, #e8e8e8, #ffffff);
+  -webkit-font-smoothing: antialiased;
+  font: 12px/1 Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;
+  overflow: hidden;
+}
+.slide .slide-main {
+  position: relative;
+  width: 100%;
+  height: 500px;
+}
+.slide .slide-main .slide-item {
+  position: absolute;
+  right: 50%;
+  width: 100%;
+  transition: all 1s;
+}
+.slide .slide-main .slide-item h2,
+.slide .slide-main .slide-item h3 {
+  position: absolute;
+  opacity: 0;
+  transition: all 1s 1s;
+}
+.slide .slide-main .slide-item h2 {
+  left: 22%;
+  top: 40%;
+  font-size: 2.5em;
+  color: #999;
+}
+.slide .slide-main .slide-item h3 {
+  left: 12%;
+  top: 30%;
+  font-size: 2em;
+  color: #333;
+}
+.slide .slide-main .slide-item img {
+  width: 100%;
+  min-height: 500px;
+  opacity: 0;
+}
+.slide .slide-main .slide-item-active {
+  right: 0;
+  z-index: 100;
+}
+.slide .slide-main .slide-item-active h2,
+.slide .slide-main .slide-item-active h3 {
+  opacity: 1;
+}
+.slide .slide-main .slide-item-active h2 {
+  left: 12%;
+}
+.slide .slide-main .slide-item-active h3 {
+  left: 22%;
+}
+.slide .slide-main .slide-item-active img {
+  opacity: 1;
+}
+.slide .slide-ctrl {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 10px;
+  z-index: 101;
+}
+.slide .slide-ctrl .slide-ctrl-container {
+  width: 800px;
+  margin: 0 auto;
+  padding: 0 0 0 5%;
+}
+.slide .slide-ctrl .slide-ctrl-container span {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 10px;
+  background-color: rgba(192, 192, 192, 0.8);
+  cursor: pointer;
+}
+.slide .slide-ctrl .slide-ctrl-container span:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.slide .slide-ctrl .slide-ctrl-container span:hover img {
+  top: -40px;
+  opacity: 1;
+}
+.slide .slide-ctrl .slide-ctrl-container span.ctrl-active {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.slide .slide-ctrl .slide-ctrl-container span img {
+  position: absolute;
+  top: -60px;
+  width: 100%;
+  opacity: 0;
+  transition: all .8s;
+}

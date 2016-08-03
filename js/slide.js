@@ -1,16 +1,20 @@
 $(function(){
 	var slide = {
-		i: 0,
 		start : 0,
 		current : 0,
-		time : 2000,
+		time : 5000,
 		itemList : $('.slide-item'),
 		ctrlList : $('.ctrl-item'),
 		timeout : null,
 		len : function(){
 			return this.itemList.length;
 		},
-		init : function(){
+		init : function(obj){
+			if(obj !== null){
+				for(i in obj){
+					this[i] = obj[i];
+				}
+			}
 			var $this = this;
 			this.timeout = setTimeout(function(){
 				$this.auto();
@@ -20,7 +24,7 @@ $(function(){
 		auto : function(){
 			var $this = this;
 			clearTimeout(this.timeout);
-			this.animate(this.itemList.eq(this.current));
+			this.animate(this.itemList.eq(this.start));
 			this.current = (this.current + 1) % this.len();
 			this.timeout = setTimeout(function(){
 				$this.auto();
@@ -57,5 +61,8 @@ $(function(){
 		}
 	}
 
-	slide.init();
+	slide.init({
+		start : 1,
+		time : 2000
+	});
 });

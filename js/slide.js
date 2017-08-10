@@ -33,7 +33,6 @@ $(function(){
 			var $this = this;
 			clearTimeout(this.timeout);
 			this.animate(this.current);
-			console.log(this.current);
 			this.current = (this.current + 1) % this.len();
 			this.timeout = setTimeout(function(){
 				$this.auto();
